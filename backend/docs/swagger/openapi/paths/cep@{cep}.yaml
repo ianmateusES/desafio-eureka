@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Zip Code
+  summary: Zip Code Lookup
+  description: >
+    ZIP Code Api for Address Verification
+  operationId: zipCode
+  responses:
+    '200':
+      description: Zip code query generated successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            $ref: ../components/schemas/Cep.yaml
+    '400':
+      description: returns returns error message
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "error"
+              message:
+                type: string
+                example: "Could not access external api"
