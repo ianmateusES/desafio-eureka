@@ -14,9 +14,13 @@ services:
   backend:
     container_name: backend-eureka
     build: ./backend
-    entrypoint: dockerize -wait tcp://redis:6379 -timeout 50s -wait-retry-interval 10s yarn dev:server
+    entrypoint: dockerize -wait tcp://redis:6379 -timeout 50s -wait-retry-interval 10s yarn start
     # volumes:
     #   - ./node:/home/node/api
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASS=
     depends_on: 
       - redis
     networks:
