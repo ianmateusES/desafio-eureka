@@ -13,7 +13,6 @@
       "@providers/*": ["container/providers/*"],
       "@api/*": ["services/*"],
       "@controllers/*": ["app/controllers/*"],
-      "@dtos/*": ["app/dtos/*"],
       "@services/*": ["app/services/*"],
       "@errors/*": ["errors/*"]
     },
