@@ -21,4 +21,4 @@ COPY --chown=node:node . .
 
 EXPOSE 3333
 
-ENTRYPOINT [ "yarn", "dev:server" ]
+ENTRYPOINT [ "yarn", "start" ]

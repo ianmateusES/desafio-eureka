@@ -9,6 +9,7 @@ module.exports = {
         '@config': './src/config',
         "@providers": "./src/container/providers",
         "@api": "./src/services",
+        "@controllers": "./src/app/controllers",
         "@services": "./src/app/services",
         "@errors": "./src/errors"
       }

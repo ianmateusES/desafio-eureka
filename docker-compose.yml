@@ -14,9 +14,13 @@ services:
   backend:
     container_name: backend-eureka
     build: ./backend
-    entrypoint: dockerize -wait tcp://redis:6379 -timeout 50s -wait-retry-interval 10s yarn dev:server
+    entrypoint: dockerize -wait tcp://redis:6379 -timeout 50s -wait-retry-interval 10s yarn start
     # volumes:
     #   - ./node:/home/node/api
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASS=
     depends_on: 
       - redis
     networks:
@@ -26,7 +30,7 @@ services:
   nginx:
     container_name: nginx-eureka
     build: ./nginx
-    entrypoint: dockerize -wait http://backend:3333 -timeout 100s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
+    entrypoint: dockerize -wait http://backend:3333 -timeout 80s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
     ports:
       - 8080:80
     depends_on: 
@@ -38,4 +42,6 @@ networks:
   eureka-database:
     driver: bridge
   eureka-net:
+    driver: bridge
+  eureka-http:
     driver: bridge

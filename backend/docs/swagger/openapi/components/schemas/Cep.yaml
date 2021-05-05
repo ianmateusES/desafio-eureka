@@ -1,0 +1,42 @@
+type: object
+properties:
+  cep:
+    description: Zip code
+    type: string
+    example: "60811-900"
+  logradouro:
+    description: Land or a space attached to a CEP
+    type: string
+    example: "Avenida Washington Soares 85"
+  complemento:
+    description: Zip code identification complement
+    type: string
+    example: ""
+  bairro:
+    description: Community or region within a city, or municipality, the minimum unit of urbanization being
+    type: string
+    example: "Edson Queiroz"
+  localidade:
+    description: Designated place belonging to a region
+    type: string
+    example: "Fortaleza"
+  uf:
+    description: Acronym of Federative Unit
+    type: string
+    example: "CE"
+  ibge:
+    description: Identification number of the Brazilian Institute of Geography and Statistics - IBGE
+    type: string
+    example: "2304400"
+  gia:
+    description: Identification number of the Gemological Institute of America - GIA
+    type: string
+    example: ""
+  ddd:
+    description: Direct Distance Dialing - DDD
+    type: string
+    example: "85"
+  siafi:
+    description: Identification number of the Federal Government Integrated Financial Administration System - SIAFI
+    type: string
+    example: "1389"
