@@ -31,7 +31,7 @@ class QueryCepService {
       try {
         const resp = await api.get(`/${cep}/json`);
         address = resp.data as IAddress;
-        await this.cacheProvider.save(cep, address);
+        await this.cacheProvider.save<IAddress>(cep, address);
       } catch (err) {
         throw new AppError('Could not access external api');
       }
