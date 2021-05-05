@@ -26,7 +26,7 @@ services:
   nginx:
     container_name: nginx-eureka
     build: ./nginx
-    entrypoint: dockerize -wait http://backend:3333 -timeout 100s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
+    entrypoint: dockerize -wait http://backend:3333 -timeout 80s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
     ports:
       - 8080:80
     depends_on: 
@@ -38,4 +38,6 @@ networks:
   eureka-database:
     driver: bridge
   eureka-net:
+    driver: bridge
+  eureka-http:
     driver: bridge
