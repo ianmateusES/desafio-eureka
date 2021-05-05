@@ -8,10 +8,11 @@
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "start": "ts-node src/server.ts",
     "lint": "eslint src --ext ts,tsx",
-    "coveralls": "cat ./__tests__/coverage/lcov.info | coveralls"
+    "tsc": "tsc --skipLibCheck",
+    "coveralls": "cat ./__tests__/coverage/lcov.info | coveralls",
+    "test": "jest"
   },
   "dependencies": {
-    "@types/ioredis": "^4.26.1",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -29,8 +30,11 @@
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
     "@types/express": "^4.17.11",
+    "@types/ioredis": "^4.26.1",
+    "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "axios-mock-adapter": "^1.19.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "eslint": "^7.25.0",
@@ -39,7 +43,9 @@
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "ts-jest": "^26.5.5",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.4"
   }

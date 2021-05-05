@@ -24,7 +24,7 @@ class QueryCepService {
     private cacheProvider: ICacheProvider,
   ) {}
 
-  public async execute({ cep }: IRequest): Promise<IAddress | undefined> {
+  public async execute({ cep }: IRequest): Promise<IAddress> {
     let address = await this.cacheProvider.recover<IAddress>(cep);
 
     if (!address) {
