@@ -27,6 +27,7 @@
     "commitlint.config.js",
     "coverage",
     "jest.config.js",
+    "jest.setup.ts",
     "prettier.config.js",
     "babel.config.js",
     "dist"
