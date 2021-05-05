@@ -8,3 +8,34 @@ services:
       - 6379:6379
     volumes: 
       - $HOME/dataset/eureka/redis:/usr/local/etc/redis
+    networks:
+      - eureka-database
+    
+  backend:
+    container_name: backend-eureka
+    build: ./backend
+    entrypoint: dockerize -wait tcp://redis:6379 -timeout 50s -wait-retry-interval 10s yarn dev:server
+    # volumes:
+    #   - ./node:/home/node/api
+    depends_on: 
+      - redis
+    networks:
+      - eureka-database
+      - eureka-net
+
+  nginx:
+    container_name: nginx-eureka
+    build: ./nginx
+    entrypoint: dockerize -wait http://backend:3333 -timeout 100s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
+    ports:
+      - 8080:80
+    depends_on: 
+      - backend
+    networks: 
+      - eureka-net
+
+networks: 
+  eureka-database:
+    driver: bridge
+  eureka-net:
+    driver: bridge
