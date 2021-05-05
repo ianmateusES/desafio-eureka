@@ -1,15 +1,19 @@
-name: Lint
+name: lint
 
-on: pull_request
+on: 
+  pull_request
 
 defaults:
   run:
     working-directory: ./backend
 
 jobs:
-  code:
-    name: Lint code
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-18.04
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,7 +26,7 @@ jobs:
           node-version: 12
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: yarn
 
-      - name: Run ESLint
+      - name: Check linting
         run: yarn lint
