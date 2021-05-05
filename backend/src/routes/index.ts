@@ -1,5 +1,5 @@
 import { Router } from 'express';
-// import arquivosRouter from './arquivos.routes'
+import cepRouter from './cep.routes';
 
 const routes = Router();
 
@@ -7,6 +7,6 @@ routes.get('/', (req, res) => {
   return res.json({ mensage: 'Air application' });
 });
 
-// routes.use('/arquivos', arquivosRouter);
+routes.use('/cep', cepRouter);
 
 export default routes;
