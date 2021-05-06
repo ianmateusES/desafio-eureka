@@ -1,17 +1,17 @@
 <div align="center" style="margin-bottom: 20px;">
-  <img alt="gobarber" src="./.github/assets/logo.png" width="auto" heigth="auto"/>
+  <img alt="gobarber" src="./.github/assets/ZipCode.svg" width="15%" heigth="auto"/>
 </div>
 
 <div align="center" style="margin: 20px;">
 
   [![The MIT License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/ianmateusES/desafio-eureka/LICENSE.md)
   ![GitHub last commit](https://img.shields.io/github/last-commit/ianmateusES/desafio-eureka?color=green&style=flat-square)
-  ![GitHub top language](https://img.shields.io/github/languages/top/ianmateusES/desafio-eurekat?style=flat-square)
+  ![GitHub top language](https://img.shields.io/github/languages/top/ianmateusES/desafio-eureka?style=flat-square)
 
   <p align="center" >
     <a href="#fire-prévia-da-aplicação"> :fire: Prévia da Aplicação</a> |
     <a href="#thinking-como-contribuir"> :thinking: Como Contribuir?</a> |
-    <a href="#zap-executando-o-projeto"> :zap: Executando o Projeto </a> 
+    <a href="#zap-executando-o-projeto"> :zap: Executando o Projeto </a> |
     <a href="#memo-licença"> :memo: Licença </a> 
   </p>
 </div>
