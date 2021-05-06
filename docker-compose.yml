@@ -4,8 +4,8 @@ services:
   redis:
     container_name: redis-eureka
     image: redis:alpine
-    ports: 
-      - 6379:6379
+    # ports: 
+    #   - 6379:6379
     volumes: 
       - $HOME/dataset/eureka/redis:/usr/local/etc/redis
     networks:
@@ -32,11 +32,25 @@ services:
     build: ./nginx
     entrypoint: dockerize -wait http://backend:3333 -timeout 80s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
     ports:
-      - 8080:80
+      - 3333:8081
     depends_on: 
       - backend
     networks: 
       - eureka-net
+      - eureka-http
+    
+  frontend:
+    container_name: frontend-eureka
+    build: ./frontend
+    entrypoint: dockerize -wait http://nginx:8081 -timeout 80s -wait-retry-interval 10s /docker-entrypoint.sh nginx -g 'daemon off;'
+    environment: 
+      - REACT_APP_BASE_URL=nginx
+    ports:
+      - 3000:8080
+    depends_on: 
+      - nginx
+    networks: 
+      - eureka-http
 
 networks: 
   eureka-database:
