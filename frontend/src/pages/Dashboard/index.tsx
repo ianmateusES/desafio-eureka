@@ -22,6 +22,7 @@ interface IAddress {
   bairro: string;
   localidade: string;
   uf: string;
+  erro?: boolean;
 }
 
 const Dashboard: React.FC = () => {
@@ -42,6 +43,11 @@ const Dashboard: React.FC = () => {
       try {
         const resp = await api.get<IAddress>(`/cep/${cep}`);
         const addressResp = resp.data;
+
+        if (addressResp.erro) {
+          setInputError('CEP não encontrado');
+          return;
+        }
 
         setAddress(addressResp);
         setInputError('');
