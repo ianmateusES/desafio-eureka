@@ -23,7 +23,7 @@ Aplicação de consultas de CEP's, armazenando as consultas realizadas em cache 
 ## :fire: Prévia da Aplicação
 
 <div align="center"> 
-  <img width="60%" src="https://media.giphy.com/media/qeucrfAL3KyvujHGlG/giphy.gif" alt="preview"/>
+  <img width="50%" src="https://media.giphy.com/media/qeucrfAL3KyvujHGlG/giphy.gif" alt="preview"/>
 </div>
 
 ### Requisito do projeto
